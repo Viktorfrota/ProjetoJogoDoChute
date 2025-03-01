@@ -21,7 +21,7 @@ body {
     opacity: 0.4;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background-size: 100% 100%;
 }
 
@@ -110,7 +110,7 @@ h1 {
 
 p,
 button {
-    font-family: 'Inter', sans-serif;
+    font-family: cursive;
 }
 
 .texto__paragrafo {
@@ -149,4 +149,16 @@ button:disabled {
     .container__informacoes {
         padding: 1rem
     }
+}
+
+.titulo span{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: absolute;
+    top: 6%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: #9bd0ff;
+    font-size: 8vh;
+    justify-content: space-between;
 }
