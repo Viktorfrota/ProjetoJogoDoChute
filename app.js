@@ -10,6 +10,7 @@ function exibirTextoNaTela(tag, texto){
     //crio a funçao e crio uma variavel para otimizar o texto
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
+    responsiveVoice.speak(texto, 'Japanese Male', {rate:1.2} );
 }
 function verificarChute(){
     let chute = document.querySelector("input").value;
@@ -34,7 +35,7 @@ function verificarChute(){
 exibirTelaInicial();
 
     function exibirTelaInicial(tag, texto){
-     exibirTextoNaTela("h1", "adivinhe o numero!");
+     exibirTextoNaTela("h1", "adivinhe o número!");
      exibirTextoNaTela("p", `escolha seu numero entre 1 e ${numeroLimite}!`);
 }
      function gerarNumeroAleatorio() {
