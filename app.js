@@ -2,6 +2,8 @@
 //titulo.innerHTML = "adivinhe numero!";
 //let paragrafo = document.querySelector("p");
 //paragrafo.innerHTML = "escolha seu numero entre 1 e 10!";
+let listasDeNumeroSorteados = [];
+let numeroLimite = 100;
 let numeroSecreto = gerarNumeroAleatorio();
 let tentativas = 1;
 function exibirTextoNaTela(tag, texto){
@@ -33,12 +35,26 @@ exibirTelaInicial();
 
     function exibirTelaInicial(tag, texto){
      exibirTextoNaTela("h1", "adivinhe o numero!");
-     exibirTextoNaTela("p", "escolha seu numero entre 1 e 100!");
+     exibirTextoNaTela("p", `escolha seu numero entre 1 e ${numeroLimite}!`);
 }
      function gerarNumeroAleatorio() {
-        return parseInt(Math.random() * 100 + 1);
+        let numeroSorteado = (parseInt(Math.random() * numeroLimite + 1));
+        let quantidadeDeNumeroSorteado = listasDeNumeroSorteados.length;
 
+        if(quantidadeDeNumeroSorteado ==  numeroLimite){
+            listasDeNumeroSorteados = [];
+        }
+
+        if (listasDeNumeroSorteados.includes(numeroSorteado)){
+            // includes verifica se o elemento ta na lista
+        return gerarNumeroAleatorio();
+     }else{
+        listasDeNumeroSorteados.push(numeroSorteado);
+        console.log(listasDeNumeroSorteados);
+        //push vai inserir esse elemento na lista
+        return numeroSorteado
      }
+    }
      function limparCampo (){
         chute = document.querySelector("input");
         chute.value = "";
